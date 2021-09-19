@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -10,4 +12,5 @@ async def root():
 
 @app.get("/secret")
 async def secret():
-    return {"message": "This is secret!"}
+    dummy_secret = os.getenv("DUMMY_SECRET")
+    return {"message": f"The dummy secret is: {dummy_secret}"}

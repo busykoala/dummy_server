@@ -1,4 +1,5 @@
 FROM python:3.9
+ENV DUMMY_SECRET="I'm a secret"
 COPY ./pyproject.toml /usr/src/app/pyproject.toml
 COPY ./poetry.lock /usr/src/app/poetry.lock
 WORKDIR /usr/src/app
